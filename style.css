@@ -128,6 +128,49 @@ align-self: center;
      margin-bottom: 1em;
  }
  
+ /* Start section */
+ .section{
+     display: flex;
+     margin: 8em;
+     justify-content: space-evenly;
+ }
+ .section article img{
+    height: 12vw;
+   width: 16vw;
+   border-radius: 5px;
+}
+.section article h3{
+    margin-top: 1em;
+    text-align: center;
+}
+.s-table{
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+
+}
+.s-table table{
+    font-size: 1.5em;
+    padding: 7em;
+    border-collapse: collapse;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+.s-table thead tr{
+    padding: 2em;
+    background-color: rgba(80, 82, 87, 0.912);
+}
+.s-table td,.s-table th{
+    padding: 0.7em 1em;
+}
+.s-table tbody tr{
+    border-bottom: #fff solid 1px;
+    text-align: center;
+}
+.s-table tbody tr:last-of-type{
+    border-bottom: rgb(80, 82, 87) solid 4px;
+
+}
 
 
 
