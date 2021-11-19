@@ -1,4 +1,5 @@
 *{
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
@@ -11,12 +12,10 @@ a{
     color: #fff;
 }
 .header{
-    display: flex;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-
     background-color: rgb(99, 98, 98);
     /* margin-bottom: 1em; */
 }
@@ -39,6 +38,7 @@ a{
 .web-name{
     font-size: 1.5em;
 }
+
 /* Start Description */
 
 .description-container{
@@ -59,7 +59,6 @@ a{
    height: 18vw;
    width: 20vw;
    border-radius: 10px;
-
 }
 .container h3{
     margin: 0.5em 0 ;
@@ -70,30 +69,33 @@ a{
 .goals{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 7em;
-}
-.goals article img{
-    height: 15vw;
-   width: 12vw;
-   border-radius: 5px;
-}
-.goals{
+    flex-wrap: wrap;
     margin-top: 10em;
 }
+.goals article img{
+    height: 8em;
+   width: 10em;
+   border-radius: 5px;
+}
+.goals article{
+margin: 1em;
+}
 .goals h3{
+    font-size: 10px;
     margin: 0.5 0;
+}
+.goals a{
+    font-size: 2vh;
 }
  .g-txt{
      margin: 7em 10em ;
-     /* border: #fff solid 2px; */
-     border-radius: 5px;
      padding: 2em;
  }
  .g-txt p{
      margin-top: 1em;
  }
 
- /* rules */
+ /* start rules */
 
  .rules{
     margin: 7em;
@@ -103,21 +105,20 @@ a{
 
  }
  .rules article{
-     margin-top: 2.5em;
+     margin: 2.5em 1em 1em 1em;
  }
  .rules article img{
-    height: 17vw;
-    width: 19vw;
+    height: 8em;
+    width: 10em;
     border-radius: 10px;
  
  }
  .rules article h5{
     margin:0.6em 0 0.6em 0;
+        font-size: 10px;
 }
-
  .r-txt {
      display: flex;
-     /* justify-content: space-around; */
      margin: 7em 10em;
  }
  .r-txt h2{
@@ -131,12 +132,16 @@ align-self: center;
  /* Start section */
  .section{
      display: flex;
-     margin: 8em;
+     margin: 8em 8em 3em 8em;
+     flex-wrap: wrap;
      justify-content: space-evenly;
  }
+ .section article{
+    margin: 2.5em 1em 1em 1em;
+}
  .section article img{
-    height: 12vw;
-   width: 16vw;
+    height: 8em;
+    width: 10em;
    border-radius: 5px;
 }
 .section article h3{
@@ -150,8 +155,9 @@ align-self: center;
 
 }
 .s-table table{
+    /* width: 100%; */
     font-size: 1.5em;
-    padding: 7em;
+    margin: 4em 6em 4em 6em;
     border-collapse: collapse;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
@@ -170,6 +176,132 @@ align-self: center;
 .s-table tbody tr:last-of-type{
     border-bottom: rgb(80, 82, 87) solid 4px;
 
+}
+
+/* Responsive */
+@media  screen and (max-width: 950px) {
+    .g-txt{
+        margin: 4em 3em 0 3em;
+        padding: 0;
+    }
+    .goals{
+        margin: 10em 50px 0 50px;
+    }
+    .description-container{
+        margin: 10em 2em 5em 2em;
+    }
+    .r-txt{
+      margin: 5em 2em 5em 2em;  
+    }
+    /* .section{
+        margin: 15em 3.5em 0 3.5em;
+    } */
+    .s-table td,.s-table th{
+        padding: 0.6em 0.9em;
+    }
+    .s-table table{
+        margin: 3em ;
+        font-size: 1.3em;
+    }
+
+}
+@media  screen and (max-width: 572px) {
+    /* header */
+    .header{
+        position:absolute;
+    }
+   .nav{
+       margin: 0.5em;
+   }
+    .nav ul{
+        gap: 1em;
+        flex-direction: column;
+        justify-content: flex-start ;
+        align-items: center;
+    }
+    .nav ul li:nth-of-type(2){
+        margin-left: 0%;
+    }
+    .nav ul li:nth-of-type(5){
+        margin-right: 0%;
+    }
+    /* description */
+    .description-container{
+        margin: 15em 2em 5em 2em;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container article{
+        margin-bottom: 1.5em;
+    }
+    .container h3{
+        font-size: 1em;
+        margin: 0.1em 0 ;
+    }
+    .container a{
+        font-size: 0.7em;
+    }
+    .container article img{
+        height: 20vh;
+        width: 40vw;
+    }
+    /* goals */
+    .goals{
+         margin-top: 15em;
+         margin-bottom: 0;
+    }
+    .g-txt{
+        margin: 2em 2em ;
+        padding: 0;
+    }
+    .g-txt p{
+        margin-top: 1em;
+    }
+
+    /* rules */
+    .rules{
+        margin: 15em 5em 0 5em;
+    }
+    .r-txt{
+        flex-direction: column;
+
+    }
+    .r-txt h2{
+        margin-bottom: 1em;
+    }
+    /* section */
+    .section{
+        margin: 15em 2.5em 0 2.5em;
+    }
+    .s-table thead{
+        display: none;
+    }
+    .s-table table , table tbody, table tr, table td{
+        display: block;
+        width: 100%;
+    }
+    .s-table tr{
+        /* margin-bottom: 15px; */
+    }
+    .s-table td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .s-table td::before{
+        content: attr(data-lable);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        font-weight: bold;
+        text-align: left;
+        padding-left: 15px;
+    }
+   
+    
 }
 
 
